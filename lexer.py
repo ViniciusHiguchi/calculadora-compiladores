@@ -29,8 +29,6 @@ class Lexer():
         self.lexer.add('ISE', r'\=\=')
 
         # id
-        self.lexer.add('IDENTIFIER', "[a-zA-z_][a-zA-z_0-9_]*")
-
         # Number
         self.lexer.add('NUMBER', r'\d+(\.\d+)?')
 
@@ -41,6 +39,10 @@ class Lexer():
         self.lexer.add('ASSIGN', r':=')
         self.lexer.add('PRINT', r'print')
         self.lexer.add('SCAN', r'scan')
+
+        #id
+        self.lexer.add('IDENTIFIER', "[a-zA-z_][a-zA-z_0-9_]*")
+
 
 
     def get_lexer(self):

@@ -4,12 +4,18 @@
 #numeros decimais
 
 from lexer import Lexer
+from parser import Parser
 
-text_input = """test := 12.4;"""
+text_input = "print(1*12*12*10+15+20*10+5+1+1+1+1+1+1);"
 
 lexer = Lexer()
 lexer = lexer.get_lexer()
 tokens = lexer.lex(text_input)
 
-for token in tokens:
-    print(token)
+#for token in tokens:
+#    print(token)
+
+pg = Parser()
+pg.parse()
+parser = pg.get_parser()
+parser.parse(tokens).eval()
