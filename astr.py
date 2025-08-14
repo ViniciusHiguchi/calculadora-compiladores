@@ -1,9 +1,13 @@
 class Number():
-    def __init__(self, value):
+    def __init__(self, value, sign):
         self.value = value
+        self.sign = sign
 
     def eval(self):
-        return float(self.value)
+        temp = float(self.value)
+        if self.sign == '-':
+            temp = temp*(-1)
+        return temp                      
 
 
 class BinaryOp():
@@ -27,8 +31,17 @@ class Mul(BinaryOp):
 class Div(BinaryOp):
     def eval(self):
         return self.left.eval() / self.right.eval()
+    
+class Mod(BinaryOp):
+    def eval(self):
+        return int(self.left.eval() % self.right.eval())
 
+class AritPriority():
+    def __init__(self, value):
+        self.value = value
 
+    def eval(self):
+        return(self.value.eval())
 
 class Print():
     def __init__(self, value):
