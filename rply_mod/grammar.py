@@ -1,5 +1,5 @@
-from rply.errors import ParserGeneratorError
-from rply.utils import iteritems
+from rply_mod.errors import ParserGeneratorError
+from rply_mod.utils import iteritems
 
 
 def rightmost_terminal(symbols, terminals):

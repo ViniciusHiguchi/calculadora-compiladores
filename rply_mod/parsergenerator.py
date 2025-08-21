@@ -8,10 +8,10 @@ import warnings
 
 from appdirs import AppDirs
 
-from rply.errors import ParserGeneratorError, ParserGeneratorWarning
-from rply.grammar import Grammar
-from rply.parser import LRParser
-from rply.utils import Counter, IdentityDict, iteritems, itervalues
+from rply_mod.errors import ParserGeneratorError, ParserGeneratorWarning
+from rply_mod.grammar import Grammar
+from rply_mod.parser import LRParser
+from rply_mod.utils import Counter, IdentityDict, iteritems, itervalues
 
 
 LARGE_VALUE = sys.maxsize
@@ -92,7 +92,7 @@ class ParserGenerator(object):
         parser) and the token the parser errored on.
 
         Currently error handlers must raise an exception. If an error handler
-        is not defined, a :exc:`rply.ParsingError` will be raised.
+        is not defined, a :exc:`rply_mod.ParsingError` will be raised.
         """
         self.error_handler = func
         return func
@@ -178,7 +178,7 @@ class ParserGenerator(object):
 
         table = None
         if self.cache_id is not None:
-            cache_dir = AppDirs("rply").user_cache_dir
+            cache_dir = AppDirs("rply_mod").user_cache_dir
             cache_file = os.path.join(
                 cache_dir,
                 "%s-%s-%s.json" % (

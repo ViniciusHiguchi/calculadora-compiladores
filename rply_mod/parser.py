@@ -1,4 +1,4 @@
-from rply.errors import ParsingError
+from rply_mod.errors import ParsingError
 from copy import deepcopy
 
 
@@ -8,7 +8,7 @@ class LRParser(object):
         self.error_handler = error_handler
 
     def parse(self, tokenizer, state=None):
-        from rply.token import Token
+        from rply_mod.token import Token
 
         original_tokenizer = deepcopy(tokenizer)
         lookahead = None
