@@ -1,4 +1,4 @@
-from rply import LexerGenerator
+from rply_mod import LexerGenerator
 
 
 class Lexer():
@@ -21,14 +21,13 @@ class Lexer():
         self.lexer.add('MOD', r'\%')
 
         # Operators rel
-        self.lexer.add('LTH', r'\<')
-        self.lexer.add('MTH', r'\>')
         self.lexer.add('LTE', r'\<\=')
         self.lexer.add('MTE', r'\>\=')
         self.lexer.add('DIF', r'\!\=')
         self.lexer.add('ISE', r'\=\=')
+        self.lexer.add('LTH', r'\<')
+        self.lexer.add('MTH', r'\>')
 
-        # id
         # Number
         self.lexer.add('NUMBER', r'\d+(\.\d+)?')
 
@@ -42,7 +41,6 @@ class Lexer():
 
         #id
         self.lexer.add('IDENTIFIER', "[a-zA-z_][a-zA-z_0-9_]*")
-
 
 
     def get_lexer(self):
